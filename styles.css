@@ -1,0 +1,782 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+ margin:0;
+ padding:0;
+ border:0;
+ outline:0;
+ vertical-align:baseline;
+ background:transparent;
+}
+
+body {
+ /* プロジェクトによって変動 */
+ min-width: 1000px;
+
+ width: 100%;
+ /*font-smoothing: antialiased;*/
+ font-variant-numeric: tabular-nums;
+ /* safari hover対策 */
+ -webkit-font-smoothing: antialiased;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+ display:block;
+}
+
+ul, ol {
+ list-style:none;
+}
+
+blockquote, q {
+ quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content:'';
+ content:none;
+}
+
+a {
+ margin:0;
+ padding:0;
+ vertical-align:baseline;
+ text-decoration: none;
+ color: inherit;
+}
+
+/* change colours to suit your needs */
+ins {
+ background-color:#ff9;
+ color:#000;
+ text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+ background-color:#ff9;
+ color:#000;
+ font-style:italic;
+ font-weight:bold;
+}
+
+del {
+ text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+ border-bottom:1px dotted;
+ cursor:help;
+}
+
+table {
+ border-collapse:collapse;
+ border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+ display:block;
+ height:1px;
+ border:0;
+ border-top:1px solid #cccccc;
+ margin:1em 0;
+ padding:0;
+}
+
+input, select {
+ vertical-align:middle;
+}
+
+img {
+ vertical-align: bottom;
+ line-height: 1.0;
+}
+
+button {
+ line-height: 1.0;
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ outline: none;
+ padding: 0;
+ appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
+    min-width: 1200px;
+}
+
+ 
+#g-nav{
+ width: 65%;
+ position: relative;
+ background:#ffffff;
+ height: 80px;
+ float: right;
+}
+ 
+.drawer{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+ position: relative;
+ height: 70px;
+ padding: 0 1em;
+ width: 100%;
+ padding: 2rem;
+}
+ 
+/*ナビゲーション部分*/
+ 
+.menu ul li a {
+display:block;
+  font-weight:bold;
+border-bottom: 1px dotted #CCC;
+  color:#333;
+  text-decoration:none;
+padding: 2rem;
+  margin-right: 20%;
+margin-left: 20%;
+}
+ 
+ 
+.menu ul li a:hover{
+color:orange;
+font-size: 1.2rem;
+}
+ 
+ 
+.menu{
+ display: block;
+  text-align:center;
+  background-color:#ffffff;
+  transition: 0.3s ease;/*滑らかに表示*/
+  /*-webkit-transform: translateX(100%);/*画面より100%外へ押し出し非表示にさせる*/
+  -webkit-transform: translateX(150%);
+/*  transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+}
+ 
+/*OPEN時の動き*/
+.menu.open {
+ -webkit-transform: translateX(0%);
+ transform: translateX(0%);/*メニューを元の位置へ戻す*/
+ 
+}
+ 
+/*トグルボタンのスタイルを指定*/
+.Toggle {
+    display: block;
+    position: fixed;    /* bodyに対しての絶対位置指定 */
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    z-index: 10;
+  right:15px;
+}
+ 
+.Toggle span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    border-bottom: solid 4px #333;
+    -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+    -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+    transition: .35s ease-in-out;			/*変化の速度を指定*/
+ 
+}
+ /*各ボーダー少しずつずらす*/
+.Toggle span:nth-child(1) {
+    top:5px;
+}
+ .Toggle span:nth-child(2) {
+    top: 18px;
+}
+ .Toggle span:nth-child(3) {
+    top: 32px;
+}
+.Toggle.active span:nth-child(1) {
+    top: 18px;
+/* 1番目のspanをマイナス45度に */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+ 
+/* 2番目と3番目のspanを45度に */
+.Toggle.active span:nth-child(2),
+.Toggle.active span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+header {
+    height: 120px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.header-in {
+    margin: 5px 10px;
+}
+.header-logo {
+    float: left;
+}
+.header-left {
+    width: 30%;
+    float: left;
+    }
+    .header-logo img {
+        width: 100%;
+        height: 90%;
+        padding-top: 10px;
+    }
+    #g-nav {
+        margin-right: 3%;
+        font-size: 20px;
+    }
+
+
+
+
+
+
+/*  メイン  */
+.main-wrapper {
+    position: relative;
+    z-index: 1;
+}
+.text-white {
+    position: absolute;
+    width: 450px;
+background-color: #222222;
+color: #ffffff;
+font-size: 40px;
+text-align: center;
+top: 70%;
+left: 10%;
+height: 70px;
+z-index: 2;
+height: 80px;
+font-weight: 600;
+padding-top: 10px;
+}
+.text-box {
+    position: absolute;
+    width: 450px;
+background-color: #222222;
+color: #ffffff;
+font-size: 40px;
+text-align: center;
+top: 83%;
+left: 10%;
+height: 70px;
+z-index: 2;
+height: 80px;
+font-weight: 600;
+padding-top: 10px;
+}
+.blue {
+    color: aqua;
+}
+.cercle-text {
+    position: absolute;
+    background-color: #000;
+    width: 250px;
+    height: 180px;
+    color: white;
+    top: 86%;
+    right: 8%;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 70px;
+    border-radius: 50%;
+}
+.yajirusi {
+    padding-top: 50px;
+    font-size: 3rem;
+}
+
+
+
+
+
+.middle {
+    position: relative;
+    z-index: 0.9;
+}
+   .middle img {
+       height: 1000px;
+       width: 1450px;
+   }
+   .middle-gray {
+       background-color:#EEEEEE;
+       height: 640px;
+       width: 660px;
+       position: absolute;
+       top: 25%;
+       left: 10%;
+   }
+   .middle-gray h1 {
+       text-align: center;
+       padding-top: 10px;
+   }
+   .middle-box{
+       margin-top: 15px;
+       margin-bottom: 15px;
+       height: 90px;
+       width: 100%;
+   }
+   .middle-box i {
+       float: left;
+       margin-left: 20px;
+       margin-right: 15px;
+       margin-bottom: 70px;
+   }
+   .middle-title {
+       font-weight: 600;
+   }
+   .text-rigth {
+       float: right;
+       width:85%;
+       margin-top: 15px;
+       margin-bottom: 15px;
+   }
+   .big-text {
+       background-color: #ffffff;
+       width: 100%;
+       height: 70px;
+       text-align: center;
+       font-size: 1.3rem;
+   }
+
+
+
+
+
+
+
+
+   .work {
+       display: flex;
+       height: 550px;
+       margin-top: 70px;
+   }
+   .work-text {
+margin-left: 10%;   
+width: 30%;
+margin-right: 20px;
+margin-top: 100px;
+   }
+   .work-img img {
+width: 90%;
+height: 370px;
+margin-top: 50px;
+
+   }
+   .work-imgs{
+       margin-right: 5%;
+   }
+   .work-imgs img {
+width: 90%;
+height: 500px;
+   }
+.work-bottom {
+    display: flex;
+    height: 350px;
+}
+.works-img {
+    margin-left: 10%;
+}
+.works-img img {
+    width: 90%;
+    padding-top: 50px;
+}
+.works-text {
+ padding-top: 60px; 
+ margin-right: 8%; 
+ width: 50%;
+}
+.weight {
+    font-weight: 600;
+    font-size: 27px;
+    padding-bottom: 30px;
+}
+.works-text p {
+    font-size: 16px;
+}
+
+
+.work-dia {
+    display: flex;
+    height: 650px;
+    margin-top: 30px;
+}
+.dia-img {
+    margin-left: 10%;
+    width: 50%;
+}
+.dia-img img {
+    height: 500px;
+    width: 100%;
+}
+.dia-imgs {
+    width: 50%;
+    margin-left: 5%;
+
+}
+.dia-imgs img {
+    margin-top: 100px;
+width: 100%;
+height: 500px;
+}
+.dia-text {
+    margin-top: 350px;
+    margin-right: 10%;
+    margin-left: 5%;
+    width: 50%;
+}
+
+
+
+
+.plan {
+    display: flex;
+    height: 300px;
+    margin-top: 50px;
+}
+.plan-text {
+    margin-left: 10%;
+    margin-right: 5%;
+    width: 40%;
+    margin-top: 50px;
+}
+.plan-text h1 {
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.plan-img {
+    margin-right: 10%;
+}
+
+
+
+.bar {
+    display: flex;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.bar-img {
+    margin: 0 5% 0 10%;
+}
+.bar-img img {
+    height: 250px;
+    width: 90%;
+}
+.bar-text {
+    margin-right: 10%;
+    width: 40%;
+}
+.bar-text h2 {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+
+.gallery {
+    height: 850px;
+    background-color: #cccccc;
+    width: 100%;
+    padding-right: 10%;
+}
+.gallery-title {
+    margin-left: 10%;
+    padding-top: 30px;
+}
+.gallery-title h3 {
+    font-size: 30px;
+}
+.gallery-header {
+    display: flex;
+    margin-left: 10%;
+}
+.gallery-box img {
+    width: 60%;
+}
+.gallery-bottom {
+    display: flex;
+    margin-top: 70px;
+    margin-left: 30%;
+}
+
+.garage-btn {
+    height: 160px;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+.garage-logo {
+    background-color: #000;
+    display: flex;
+    height: 100px;
+    width: 65%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.logo-img {
+    margin: 0;
+    margin: 15px 150px 15px 50px;
+}
+.garage-logo p {
+    margin-top: 33px;
+    font-size: 23px;
+    display: inline;
+}
+.garage-logo p:hover {
+    font-weight: 600;
+    font-size: 26px;
+}
+
+
+
+
+
+
+.custmor {
+    background-color: #cccccc;
+    height: 1400px;
+    width: 100%;
+}
+.custmor h1 {
+    text-align: center;
+    padding-top: 50px;
+}
+.custmor-box {
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    height: 100%;
+}
+.custmor-left {
+     margin: 50px 0;
+     height: 200px;
+}
+.float-left {
+    float: left;
+    text-align: left;
+}
+.float-left img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 80px;
+}
+.float-right {
+    background-color: #ffffff;
+    height: 180px;
+    width: 750px;
+    float: right;
+    border-radius: 10px 10px 10px 0;
+    padding-left: 50px;
+}
+.float-right p {
+    float: left;
+    text-align: left;
+}
+.white-box {
+    height: 200px;
+    margin: 50px 0;
+}
+.white-text {
+    background-color: #ffffff;
+    height: 180px;
+    width: 800px;
+    float: left;
+    border-radius: 10px 10px 0px 10px;
+}
+.white-text p {
+    float: left;
+    margin-left: 80px;
+    text-align: left;
+}
+.white-img {
+    float: right;
+}
+.white-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 80px;
+}
+
+
+
+
+.table-wrapper {
+    width: 100%;
+    height: 400px;
+}
+.table-header h1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.table-box {
+    display: flex;
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+}
+.table-left {
+    background-color: #66ff33;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* フォーム   */
+.form {
+    text-align: center;
+    margin: 0 auto;
+    height: 800px;
+    width: 100%;
+    background-color: #cccccc;
+}
+.form-title {
+    padding-top: 100px;
+}
+.long {
+    width: 500px;
+    padding: 20px 20px;
+    margin: 10px 0px;
+    border-radius: 999px;
+}
+.button {
+    background-color: tomato;
+    padding: 10px 150px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    border: tomato;
+    margin-top: 30px;
+}
+.button:hover {
+    padding: 12px 155px;
+    font-size: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------ここからPCモニターの記述-----------*/
+@media screen and (min-width: 1300px) {
+ 
+/*ロゴの大きさを調整*/
+	
+#g-nav{
+ display: flex;
+}
+ 
+.Toggle{
+ display: none;
+}
+.menu{
+width: 100%;
+font-size:0.9em;
+background-color: #ffffff
+-webkit-transform: translateX(0);
+transform : translateX(0);
+}
+.menu ul{
+ height: 70px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-end;
+ align-items: center;
+}
+.menu ul li a{
+ padding: 0 1em;
+ border-bottom: none;
+ text-align: center;
+}
+/*.menu ul li a:hover{
+background-color:transparent;
+}*/
